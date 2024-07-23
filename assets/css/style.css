@@ -452,6 +452,7 @@ a:hover, a:focus, a:active {
   position: relative;
   overflow-x: hidden;
   overflow-y: overlay;
+  height: 100%;
 }
 
 .inner-wrapper {
