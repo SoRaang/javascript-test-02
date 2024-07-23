@@ -45,8 +45,8 @@ for(let i = 0; i < 5; i ++) {
 document.write('<br />');
 document.write('<br />');
 
-for(let i = 0; i <= 5; i ++) {
-    for(let j = 0; j < i; j ++) {
+for(let i = 0; i < 5; i ++) {
+    for(let j = 0; j <= i; j ++) {
         document.write('*');
     }
 
@@ -55,3 +55,78 @@ for(let i = 0; i <= 5; i ++) {
 
 document.write('<br />');
 document.write('<br />');
+
+for(let i = 0; i < 5; i ++) {
+    for(let j = 5; j > i; j --) {
+        document.write('*');
+    }
+
+    document.write('<br />');
+}
+
+document.write('<br />');
+document.write('<br />');
+
+for(let i = 0; i < 5; i ++) {
+    for(let j = 0; j <= i; j ++) {
+        document.write('&nbsp');
+    }
+
+    for(let j = 5; j > i; j --) {
+        document.write('*');
+    }
+
+    document.write('<br />');
+}
+
+document.write('<br />');
+document.write('<br />');
+
+for(let i = 0; i < 5; i ++) {
+    for(let j = 5; j > i; j --) {
+        document.write('&nbsp');
+    }
+
+    for(let j = 0; j <= i; j ++) {
+        document.write('*');
+    }
+
+    document.write('<br />');
+}
+
+document.write('<br />');
+document.write('<br />');
+
+let totalLine = 15;
+
+for (let i = 1; i < totalLine; i ++) {
+    for (let j = totalLine; j > i; j --) {
+        document.write('&nbsp');
+    }
+
+    for (let k = 0; k < 2 * i - 1; k ++) {
+        document.write('*');
+    }
+
+    document.write('<br />');
+}
+
+// 배열
+
+const fruits = ['사과', '배', '바나나'];
+
+console.log('바나나는 ' + fruits.indexOf('바나나') + '번째');
+
+fruits.splice(1, 0, '감귤');
+
+for (item in fruits) { // 배열의 index를 개별값으로 선언
+    console.log(fruits[item] + ' 맛있다');
+}
+
+for (item of fruits) { // 배열의 요소 자체를 개별값으로 선언
+    console.log(item);
+}
+
+for (let i = fruits.length - 1; i >= 0; i --) { // 역산되는 i = index 값을 통해 배열 거꾸로 출력
+    console.log(fruits[i]);
+}
