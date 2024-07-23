@@ -97,18 +97,35 @@ for(let i = 0; i < 5; i ++) {
 document.write('<br />');
 document.write('<br />');
 
-let totalLine = 15;
-
-for (let i = 1; i < totalLine; i ++) {
-    for (let j = totalLine; j > i; j --) {
+for(let i = 0; i < 5; i ++)  {
+    for(let j = 4; j > i; j --)  {
         document.write('&nbsp');
     }
-
-    for (let k = 0; k < 2 * i - 1; k ++) {
+    for(let j = 0; j <= i; j ++)  {
+        document.write('*');
+    }
+    for(let j = 1; j <= i; j ++)  {
         document.write('*');
     }
 
-    document.write('<br />');
+    document.write('<br>');
+}
+
+document.write('<br />');
+document.write('<br />');
+
+for(let i = 0; i < 5; i ++)  {
+    for(let j = 0; j < i; j ++)  {
+        document.write('&nbsp');
+    }
+    for(let j = 5; j > i; j --)  {
+        document.write('*');
+    }
+    for(let j = 4; j > i; j --)  {
+        document.write('*');
+    }
+
+    document.write('<br>');
 }
 
 document.write('<br />');
@@ -141,6 +158,26 @@ for(let i = 0; i < 4; i ++)  {
 
     document.write('<br />');
 }
+
+document.write('<br />');
+document.write('<br />');
+
+let totalLine = 15;
+
+for (let i = 1; i < totalLine; i ++) {
+    for (let j = totalLine; j > i; j --) {
+        document.write('&nbsp');
+    }
+
+    for (let k = 0; k < 2 * i - 1; k ++) {
+        document.write('*');
+    }
+
+    document.write('<br />');
+}
+
+document.write('<br />');
+document.write('<br />');
 
 
 // 배열
@@ -188,4 +225,44 @@ function earnings(name, wage = 10030, hours = 40, monthly = 22) {
     `)
 }
 
-earnings('김창완')
+earnings('김창완', 15600);
+
+const numbers = [234, 242, 653, 351, 673];
+
+numbers.forEach((value, index, array) => {
+    console.log(`${ index }번째 요소 : ${ value }`);
+});
+
+let mapTest = [214, 53, 123, 75, 24];
+
+mapTest = mapTest.map((value) => {
+    return value * value;
+});
+
+mapTest.forEach(console.log);
+
+const filterTest = [0, 1, 2, 3, 4, 5];
+const evenNumbers = filterTest.filter((value) => {
+    return value % 2 === 0;
+});
+
+console.log(`원래 배열 : ${ filterTest }`);
+console.log(`짝수만 추출 : ${ evenNumbers }`);
+
+// setInterval, clearInterval
+
+let intervalCount = 0
+let testInterval = setInterval(() => {
+    console.log(`1초마다 실행, ${ intervalCount }번째`);
+    intervalCount ++;
+}, 1000);
+
+setTimeout(() => {
+    console.log('끝!');
+
+    clearInterval(testInterval);
+}, 5000);
+
+// 익명함수
+
+let anonFunc = function() { /** 이런 식으로 */ };
