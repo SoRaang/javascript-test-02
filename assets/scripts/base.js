@@ -130,3 +130,14 @@ for (item of fruits) { // 배열의 요소 자체를 개별값으로 선언
 for (let i = fruits.length - 1; i >= 0; i --) { // 역산되는 i = index 값을 통해 배열 거꾸로 출력
     console.log(fruits[i]);
 }
+
+function sumAll(a, b) {
+    let output = 0;
+    for (let i = a; i <= b; i ++) {
+        output += i;
+    }
+
+    return output;
+}
+
+console.log(sumAll(1, 2000));
