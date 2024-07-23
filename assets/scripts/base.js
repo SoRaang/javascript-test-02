@@ -17,7 +17,7 @@ alert(`${ year }년은 ${ (year % 4 === 0 && year % 100 !== 0) || year % 400 ===
 
  */
 
-// 모래시계 별 찍기
+// 별 찍기
 
 for(let i = 0; i < 5; i ++) {
     document.write('*');
@@ -111,6 +111,38 @@ for (let i = 1; i < totalLine; i ++) {
     document.write('<br />');
 }
 
+document.write('<br />');
+document.write('<br />');
+
+for(let i = 0; i < 5; i ++)  {
+    for(let j = 4; j > i; j --)  {
+        document.write('&nbsp');
+    }
+    for(let j = 0; j <= i; j ++)  {
+        document.write('*');
+    }
+    for(let j = 1; j <= i; j ++)  {
+        document.write('*');
+    }
+
+    document.write('<br />');
+}
+
+for(let i = 0; i < 4; i ++)  {
+    for(let j = 0; j <= i; j ++)  {
+        document.write('&nbsp');
+    }
+    for(let j = 4; j > i; j --)  {
+        document.write('*');
+    }
+    for(let j = 3; j > i; j --)  {
+        document.write('*');
+    }
+
+    document.write('<br />');
+}
+
+
 // 배열
 
 const fruits = ['사과', '배', '바나나'];
@@ -131,6 +163,8 @@ for (let i = fruits.length - 1; i >= 0; i --) { // 역산되는 i = index 값을
     console.log(fruits[i]);
 }
 
+// 함수
+
 function sumAll(a, b) {
     let output = 0;
     for (let i = a; i <= b; i ++) {
@@ -141,3 +175,17 @@ function sumAll(a, b) {
 }
 
 console.log(sumAll(1, 2000));
+
+function earnings(name, wage = 10030, hours = 40, monthly = 22) {
+    let totalWage = wage * hours;
+
+    console.log(`
+        ${ name }님의 급여 정보
+        - 시급: ${ wage }원
+        - 근무 시간: ${ hours }시간
+        - 급여: ${ totalWage }원
+        - 월급: ${ wage * 8 * monthly }원
+    `)
+}
+
+earnings('김창완')
